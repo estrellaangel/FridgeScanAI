@@ -6,8 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1D161E8A2DB417BA00B70311 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D161E892DB417B400B70311 /* GoogleService-Info.plist */; };
+		1D161E8D2DB4195400B70311 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8C2DB4195400B70311 /* FirebaseAuth */; };
+		1D161E8F2DB4195400B70311 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8E2DB4195400B70311 /* FirebaseCore */; };
+		1D161E912DB4195400B70311 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E902DB4195400B70311 /* FirebaseFirestore */; };
+		1D161E932DB4195400B70311 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E922DB4195400B70311 /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1D0448812DA4889A005B9F92 /* FridgeScanAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeScanAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D161E892DB417B400B70311 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D161E932DB4195400B70311 /* FirebaseStorage in Frameworks */,
+				1D161E912DB4195400B70311 /* FirebaseFirestore in Frameworks */,
+				1D161E8F2DB4195400B70311 /* FirebaseCore in Frameworks */,
+				1D161E8D2DB4195400B70311 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +60,7 @@
 			children = (
 				1D0448832DA4889A005B9F92 /* FridgeScanAI */,
 				1D0448822DA4889A005B9F92 /* Products */,
+				1D161E892DB417B400B70311 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +92,10 @@
 			);
 			name = FridgeScanAI;
 			packageProductDependencies = (
+				1D161E8C2DB4195400B70311 /* FirebaseAuth */,
+				1D161E8E2DB4195400B70311 /* FirebaseCore */,
+				1D161E902DB4195400B70311 /* FirebaseFirestore */,
+				1D161E922DB4195400B70311 /* FirebaseStorage */,
 			);
 			productName = FridgeScanAI;
 			productReference = 1D0448812DA4889A005B9F92 /* FridgeScanAI.app */;
@@ -107,6 +125,9 @@
 			);
 			mainGroup = 1D0448782DA48899005B9F92;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1D0448822DA4889A005B9F92 /* Products */;
 			projectDirPath = "";
@@ -122,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D161E8A2DB417BA00B70311 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +301,47 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/special",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/signal",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/_highs",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_unuran",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/cluster",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/integrate",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/csgraph",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/_lib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/numpy/random/lib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_boost",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/cython_optimize",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_rcont",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/linalg",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/_lib/_uarray",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_isolve",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/pyarrow-16.1.0-py3.8-win-amd64.egg/pyarrow",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/io/matlab",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/_trlib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/spatial",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_propack",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/interpolate",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/ndimage",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_levy_stable",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/numpy/core/lib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/io",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/odr",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/fft/_pocketfft",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/win32/libs",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/win32com/libs",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_dsolve",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/_lsq",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_eigen/arpack",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/spatial/transform",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/tensorflow/python",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/fftpack",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = capstone.FridgeScanAI;
@@ -311,6 +374,47 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/special",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/signal",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/_highs",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_unuran",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/cluster",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/integrate",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/csgraph",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/_lib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/numpy/random/lib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_boost",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/cython_optimize",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_rcont",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/linalg",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/_lib/_uarray",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_isolve",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/pyarrow-16.1.0-py3.8-win-amd64.egg/pyarrow",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/io/matlab",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/_trlib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/spatial",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_propack",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/interpolate",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/ndimage",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/stats/_levy_stable",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/numpy/core/lib",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/io",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/odr",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/fft/_pocketfft",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/win32/libs",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/win32com/libs",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_dsolve",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/optimize/_lsq",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/sparse/linalg/_eigen/arpack",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/spatial/transform",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/tensorflow/python",
+					"$(PROJECT_DIR)/FridgeScanAI/TFODCourse/tfod/Lib/site-packages/scipy/fftpack",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
@@ -346,6 +450,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D161E8C2DB4195400B70311 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1D161E8E2DB4195400B70311 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		1D161E902DB4195400B70311 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1D161E922DB4195400B70311 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D0448792DA48899005B9F92 /* Project object */;
 }
