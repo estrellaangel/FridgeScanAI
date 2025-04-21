@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SwiftData
+import FirebaseAuth
 
 enum Tab {
     case fridge, recipes, scan, cart, settings
@@ -14,41 +14,55 @@ enum Tab {
 
 struct HomeView: View {
     @State private var selectedTab: Tab = .fridge
-    @State private var isRecording = true
+    @State private var isRecording = false
     @State private var videoURL: URL? = nil
+    @State private var didFinishRecording = false
     
+    //USER = ANONYMOUS
+    @State private var userID: String = Auth.auth().currentUser?.uid ?? "anonymous"
+    
+    //MOST UP TO DATE SCAN
+    @EnvironmentObject var scanSession: ScanSessionViewModel
 
     var body: some View {
         TabView(selection: $selectedTab) {
             CurrentFridgeView(selectedTab: $selectedTab)
                 .tabItem {
-                    Label("Current Fridge", systemImage: "refrigerator")
+                    Label("", systemImage: "refrigerator")
                 }
                 .tag(Tab.fridge)
 
             RecipesView()
                 .tabItem {
-                    Label("Recipes", systemImage: "fork.knife.circle")
+                    Label("", systemImage: "fork.knife.circle")
                 }
                 .tag(Tab.recipes)
 
-            ScanViewWrapper(isRecording: $isRecording, videoURL: $videoURL)
+            ScanViewWrapper(
+                isRecording: $isRecording,
+                videoURL: $videoURL,
+                didFinishRecording: $didFinishRecording,
+                userID: $userID)
                 .tabItem {
-                    Label("Scan Fridge", systemImage: "camera")
+                    Label("", systemImage: "camera")
                 }
                 .tag(Tab.scan)
 
             ShoppingListView()
                 .tabItem {
-                    Label("Shopping List", systemImage: "pencil.and.list.clipboard")
+                    Label("", systemImage: "pencil.and.list.clipboard")
                 }
                 .tag(Tab.cart)
 
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gearshape")
+                    Label("", systemImage: "gearshape")
                 }
                 .tag(Tab.settings)
+        }
+        .onAppear {
+            scanSession.fetchLatestScan() //get the previous latest scan
+            tryToRunModel()
         }
     }
 }

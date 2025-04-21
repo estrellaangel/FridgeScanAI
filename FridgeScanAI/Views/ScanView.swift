@@ -11,9 +11,10 @@ import AVFoundation
 struct ScanView: UIViewControllerRepresentable {
     @Binding var isRecording: Bool
     @Binding var videoURL: URL?
+    @Binding var didFinishRecording: Bool
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(isRecording: $isRecording, videoURL: $videoURL)
+        Coordinator(isRecording: $isRecording, videoURL: $videoURL, didFinishRecording: $didFinishRecording)
     }
 
     func makeUIViewController(context: Context) -> ScanViewController {
@@ -24,16 +25,20 @@ struct ScanView: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: ScanViewController, context: Context) {
         uiViewController.updateRecordingState(isRecording)
+        uiViewController.restartSessionIfNeeded() 
     }
 
     class Coordinator {
         var isRecording: Binding<Bool>
         var videoURL: Binding<URL?>
-
-        init(isRecording: Binding<Bool>, videoURL: Binding<URL?>) {
+        var didFinishRecording: Binding<Bool>
+        
+        init(isRecording: Binding<Bool>, videoURL: Binding<URL?>, didFinishRecording: Binding<Bool>) {
             self.isRecording = isRecording
             self.videoURL = videoURL
+            self.didFinishRecording = didFinishRecording
         }
+        
     }
 }
 
@@ -42,6 +47,9 @@ class ScanViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     var previewLayer: AVCaptureVideoPreviewLayer!
     var movieOutput = AVCaptureMovieFileOutput()
     var coordinator: ScanView.Coordinator?
+    
+    var shouldRestartRecording = false
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,9 +93,15 @@ class ScanViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
 
     func startRecording() {
         if !movieOutput.isRecording {
+
+            //then add new video
             let outputURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".mov")
             movieOutput.startRecording(to: outputURL, recordingDelegate: self)
             coordinator?.isRecording.wrappedValue = true
+            
+        }else{
+            shouldRestartRecording = true
+            stopRecording()
         }
     }
 
@@ -95,6 +109,14 @@ class ScanViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
         if movieOutput.isRecording {
             movieOutput.stopRecording()
             coordinator?.isRecording.wrappedValue = false
+        }
+    }
+    
+    func restartSessionIfNeeded() {
+        if !captureSession.isRunning {
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.captureSession.startRunning()
+            }
         }
     }
 
@@ -110,7 +132,21 @@ class ScanViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
 
         print("Recording finished: \(outputFileURL)")
         DispatchQueue.main.async {
-            self.coordinator?.videoURL.wrappedValue = outputFileURL
+            let documentsDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let safeURL = documentsDir.appendingPathComponent("LatestScan.mov")
+
+            do {
+                if FileManager.default.fileExists(atPath: safeURL.path) {
+                    try FileManager.default.removeItem(at: safeURL)
+                }
+                try FileManager.default.copyItem(at: outputFileURL, to: safeURL)
+                print("Moved video to safe path: \(safeURL.path)")
+
+                self.coordinator?.videoURL.wrappedValue = safeURL
+                self.coordinator?.didFinishRecording.wrappedValue = true
+            } catch {
+                print("Failed to move file to documents directory: \(error)")
+            }
         }
     }
 

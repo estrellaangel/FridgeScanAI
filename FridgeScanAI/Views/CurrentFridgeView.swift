@@ -12,15 +12,7 @@ struct CurrentFridgeView: View {
     @Binding var selectedTab: Tab
     
     //Get all ingredients
-    @Query(
-            filter: #Predicate<FridgeContents> { _ in true },
-            sort: [SortDescriptor<FridgeContents>(\.date, order: .reverse)]
-        ) private var fridgeContents: [FridgeContents]
-
-        var latestIngredients: [Ingredient] {
-            fridgeContents.first?.ingredients ?? []
-        }
-    
+    @EnvironmentObject var scanSession: ScanSessionViewModel
     
     var body: some View {
         
@@ -30,13 +22,25 @@ struct CurrentFridgeView: View {
                 
                     Text("Current Ingredients")
                         .bold()
-                    
-                    Text("These are the current ingredients")
-                    
-                    List(latestIngredients, id: \.id) { ingredient in
-                        Text(ingredient.name)
+                
+                    if scanSession.latestScanIngredients.isEmpty {
+                        Text("No ingredients detected yet.")
+                            .foregroundColor(.secondary)
+                    } else {
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 16) {
+                                ForEach(scanSession.latestScanIngredients) { ingredient in
+                                    IngredientDetailsView(ingredient: ingredient)
+                                        .frame(width: 140)
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        .frame(height: 200)
                     }
-            
+                    
+                
                 //CURRENT RECIPIES
                 
                     Text("Current Recipes")

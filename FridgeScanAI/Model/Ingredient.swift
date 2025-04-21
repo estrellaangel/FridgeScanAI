@@ -7,28 +7,58 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 class Ingredient: Identifiable {
     
     //generates a unique id string
-    var id: String = UUID().uuidString
+    var internalId: String = UUID().uuidString
+    
+    //gets ingredientid (makes it distinquishable in database
+    var uid: String = ""
     
     //empty string that user will upload their ingredient
     var name: String = ""
     
-    //tracks last time was updated
-    var lastUpdated: Date = Date()
-    
     // amount eventually added in
-    var amount: String = ""
+    var amount: Int = 1
     
-    //so that in the data we dont loose count of ingredient
-    var isHidden: Bool = false
+    // url of photo
+    var urlOfPhoto: String = ""
+    
+    
     
     //initializer - this is how we create an instance of the ingredient
-    init(name: String){
+    init(name: String, uid: String, urlOfPhoto: String){
         self.name = name
+        self.uid = uid
+        self.urlOfPhoto = urlOfPhoto
+        
+        
+        
+        
     }
+    
+    var image: some View {
+        AsyncImage(url: URL(string: urlOfPhoto)) { phase in
+            switch phase {
+            case .empty:
+                ProgressView()
+            case .success(let image):
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit) // 🛠 specify ContentMode explicitly
+            case .failure:
+                Image(systemName: "photo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(.gray)
+            @unknown default:
+                EmptyView()
+            }
+        }
+    }
+    
     
 }
