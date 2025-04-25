@@ -15,12 +15,23 @@ struct ScanResultView: View {
 
     @EnvironmentObject var scanSession: ScanSessionViewModel
     
+    //ADDED BY SABRINA
+    @EnvironmentObject var favoriteVM: FavoriteIngredientsViewModel
+    @EnvironmentObject var shoppingListVM: ShoppingListViewModel
+    
+    //FOR RECIPES
+    @EnvironmentObject var recipeVM: RecipeViewModel
+    
     @State private var isUploading = true
     @State private var uploadStatusMessage = "Uploading scan..."
+    @State private var uploadRecipeMessage = "Updating Possible Recipes ..."
     
     var body: some View {
         VStack(spacing: 20) {
             Text(uploadStatusMessage)
+                .font(.title2)
+                .padding()
+            Text(uploadRecipeMessage)
                 .font(.title2)
                 .padding()
         }
@@ -42,8 +53,15 @@ struct ScanResultView: View {
         switch result {
         case .success(let snapshot):
             DispatchQueue.main.async {
-                scanSession.setScan(from: snapshot) // update in-memory
+                //ADDED PARAMETERS BY SABRINA FOR SHOPPING LIST FUNCTIONALITY
+                scanSession.setScan(from: snapshot, favoriteVM: favoriteVM, shoppingListVM: shoppingListVM) // update in-memory
                 uploadStatusMessage = "Scan uploaded successfully"
+                
+                let names = scanSession.latestScanIngredients.map { $0.name }
+                fetchRecipes(using: names, recipeVM: recipeVM)
+                
+                uploadRecipeMessage = "Updated Recipes successfully"
+                
             }
         case .failure(let error):
             DispatchQueue.main.async {

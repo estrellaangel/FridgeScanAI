@@ -23,6 +23,10 @@ struct HomeView: View {
     
     //MOST UP TO DATE SCAN
     @EnvironmentObject var scanSession: ScanSessionViewModel
+    
+    //SABRINA ADDED FOR SHOPPING LIST UPDATE AFTER SCAN
+    @EnvironmentObject var favoriteVM: FavoriteIngredientsViewModel
+    @EnvironmentObject var shoppingListVM: ShoppingListViewModel
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -61,12 +65,10 @@ struct HomeView: View {
                 .tag(Tab.settings)
         }
         .onAppear {
-            scanSession.fetchLatestScan() //get the previous latest scan
+            //SABRINA ADDED PARAMETERS FOR SHOPPING LIST FUNCTIONALITY
+            scanSession.fetchLatestScan(favoriteVM: favoriteVM, shoppingListVM: shoppingListVM) //get the previous latest scan
             tryToRunModel()
         }
     }
 }
 
-#Preview {
-    HomeView()
-}

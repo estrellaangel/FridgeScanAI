@@ -1,43 +1,37 @@
-//
-//  RecipesView.swift
-//  FridgeScanAI
-//
-//  Created by Estrella Angel on 4/7/25.
-//
-
 import SwiftUI
 
 struct RecipesView: View {
+    
+    @EnvironmentObject var scanSession: ScanSessionViewModel
+    @EnvironmentObject var recipeVM: RecipeViewModel
+    
+    @State private var lastFetchedScanID: String? = nil
+
     var body: some View {
         
-        NavigationStack {
-            VStack(alignment: .leading, spacing: 20) {
+        VStack {
             
-                HStack{
-                    Text("SEARCH BAR")
-                    
-                    Spacer()
-                    
-                    Button("Filter") {
-                        //TODO: Add in filter logic
-                    }
-                    .buttonStyle(.borderedProminent)
-                }
-                
-                
-                Text("These are the current recipes")
-                List {
-                    // TODO: Add in the list of current recipes
-                }
-                
-            }
-            .padding()
-            .navigationTitle("Recipies")
-        }
-        
-    }
-}
+            Text("Recipe Suggestions")
+                .bold()
+            
+            if recipeVM.currentRecipes.isEmpty {
+                Text("No recipes found yet.")
+                    .foregroundColor(.gray)
+            } else {
+                List(recipeVM.currentRecipes) { recipe in
+                    VStack(alignment: .leading, spacing: 16) {
 
-#Preview {
-    RecipesView()
+                        RecipePageDetailView(recipe:recipe)
+                        
+                    }
+                }
+            }
+        }
+        .onAppear {
+
+            recipeVM.loadRecipesFromFirebase()
+
+        }
+        .navigationTitle("Recommended Recipes")
+    }
 }

@@ -12,7 +12,6 @@ struct ScanViewWrapper: View {
     @Binding var videoURL: URL?
     @Binding var didFinishRecording: Bool
     
-    
     //ANONYMOUS USER USED FOR STORING SCANS + HAVING HISTORY SCANS
     @Binding var userID: String
     
