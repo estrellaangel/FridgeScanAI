@@ -52,7 +52,6 @@ struct ScanUploadService {
                 }
 
                 let db = Firestore.firestore()
-//                let docRef = db.collection("scans").document()
                 let docRef = db.collection("users").document(userID).collection("scans").document()
 
 

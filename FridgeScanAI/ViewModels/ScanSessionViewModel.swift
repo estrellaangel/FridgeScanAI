@@ -17,6 +17,55 @@ class ScanSessionViewModel: ObservableObject {
     
     @Published var hasLoadedInitialScan: Bool = false
     
+    // CHECKED ITEMS FOR RECIPES
+        @Published var checkedItems: [String: Bool] = [:]
+            
+        func toggleChecked(for item: String) {
+            checkedItems[item, default: false].toggle()
+        }
+
+        func initializeCheckedItems(for ingredients: [String]) {
+            for item in ingredients {
+                if checkedItems[item] == nil {
+                    checkedItems[item] = false
+                }
+            }
+        }
+    
+        func isIngredientChecked(ingredientOriginal: String, ingredientName: String) -> Bool {
+            let loweredOriginal = ingredientOriginal.lowercased()
+            let loweredName = ingredientName.lowercased()
+            return loweredOriginal.contains(loweredName) && (checkedItems[ingredientName] ?? false)
+        }
+    
+        func matchesDetectedIngredient(ingredientOriginal: String) -> Bool {
+            let loweredOriginal = ingredientOriginal.lowercased()
+            for detected in latestScanIngredients {
+                let loweredDetected = detected.name.lowercased()
+                if loweredOriginal.contains(loweredDetected) {
+                    return true
+                }
+            }
+            return false
+        }
+    
+        func toggleDetectedIngredient(for ingredient: DecodableIngredient) {
+            let loweredOriginal = ingredient.original.lowercased()
+            
+            for detected in latestScanIngredients {
+                let loweredDetected = detected.name.lowercased()
+                if loweredOriginal.contains(loweredDetected) {
+                    // If match exists, toggle the checkedItems for that detected ingredient
+                    let current = checkedItems[detected.name] ?? false
+                    checkedItems[detected.name] = !current
+                    break
+                }
+            }
+        }
+
+
+    // CHECKED ITEMS FOR RECIPES
+    
     private let db = Firestore.firestore()
     
     func fetchLatestScan(favoriteVM: FavoriteIngredientsViewModel, shoppingListVM: ShoppingListViewModel) {

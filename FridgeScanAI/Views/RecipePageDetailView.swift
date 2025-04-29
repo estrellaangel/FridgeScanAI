@@ -16,8 +16,8 @@ struct RecipePageDetailView: View {
             // IMAGE
             recipe.imageView
                 .frame(width: 100, height: 100) // fixed size ✅
-                .clipped() // cut off overflow to fit frame
-                .cornerRadius(12) // rounded corners
+                .clipped()
+                .cornerRadius(12)
 
             // TEXT
             VStack(alignment: .leading, spacing: 8) {
