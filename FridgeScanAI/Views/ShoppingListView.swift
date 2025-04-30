@@ -1,47 +1,29 @@
-//
-//  ShoppingListView.swift
-//  FridgeScanAI
-//
-//  Created by Sabrina Farias 4/25.
-//
-
 import SwiftUI
 
 struct ShoppingListView: View {
+    @EnvironmentObject var scanSession: ScanSessionViewModel
     @StateObject private var viewModel = ShoppingListViewModel()
     @State private var newItem = ""
-    @State private var checkedItems: [String: Bool] = [:]
 
     var body: some View {
         NavigationStack {
-            
-            // IF TIME: add in scanned items as already crossed off items
-            
             VStack {
                 List {
-                    ForEach(viewModel.shoppingList, id: \.self) { item in
-                        HStack {
-                            Button(action: {
-                                checkedItems[item]?.toggle()
-                            }) {
-                                Image(systemName: (checkedItems[item] ?? false) ? "checkmark.square" : "square")
-                                    .foregroundColor(.blue)
-                            }
-
-                            Text(item)
-                                .strikethrough(checkedItems[item] ?? false)
-                                .foregroundColor((checkedItems[item] ?? false) ? .secondary : .primary)
-                        }
-                        .onAppear {
-                            // Initialize checkbox state if it's new
-                            if checkedItems[item] == nil {
-                                checkedItems[item] = false
-                            }
-                        }
+                    
+                    // Show ONLY unchecked favorite items
+                    ForEach(viewModel.favoriteBasedItems.filter { !viewModel.isChecked($0) }, id: \.self) { item in
+                        shoppingItemRow(item: item)
                     }
-                    .onDelete(perform: viewModel.deleteItem)
+                    
+                    
+                    // Show ALL manual items
+                    ForEach(viewModel.manualItems, id: \.self) { item in
+                        shoppingItemRow(item: item)
+                    }
+                    
+                    
                 }
-
+                
                 HStack {
                     TextField("Add item", text: $newItem)
                         .textFieldStyle(.roundedBorder)
@@ -49,8 +31,7 @@ struct ShoppingListView: View {
                     Button("Add") {
                         let trimmed = newItem.trimmingCharacters(in: .whitespacesAndNewlines)
                         guard !trimmed.isEmpty else { return }
-                        viewModel.addItem(trimmed)
-                        checkedItems[trimmed] = false
+                        viewModel.addManualItem(trimmed)
                         newItem = ""
                     }
                     .buttonStyle(.borderedProminent)
@@ -59,15 +40,23 @@ struct ShoppingListView: View {
             }
             .navigationTitle("Shopping List")
             .onAppear {
-                viewModel.fetchShoppingList()
-                
-                // Reset checkboxes
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    for item in viewModel.shoppingList {
-                        checkedItems[item] = false
-                    }
-                }
+                viewModel.fetchShoppingList(scanSessionVM: scanSession)
             }
+        }
+    }
+
+    private func shoppingItemRow(item: String) -> some View {
+        HStack {
+            Button(action: {
+                viewModel.toggleChecked(for: item)
+            }) {
+                Image(systemName: viewModel.isChecked(item) ? "checkmark.square" : "square")
+                    .foregroundColor(.blue)
+            }
+
+            Text(item)
+                .strikethrough(viewModel.isChecked(item))
+                .foregroundColor(viewModel.isChecked(item) ? .secondary : .primary)
         }
     }
 }

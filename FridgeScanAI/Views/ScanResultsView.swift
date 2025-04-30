@@ -53,15 +53,16 @@ struct ScanResultView: View {
         switch result {
         case .success(let snapshot):
             DispatchQueue.main.async {
-                //ADDED PARAMETERS BY SABRINA FOR SHOPPING LIST FUNCTIONALITY
-                scanSession.setScan(from: snapshot, favoriteVM: favoriteVM, shoppingListVM: shoppingListVM) // update in-memory
+                scanSession.setScan(from: snapshot, favoriteVM: favoriteVM, shoppingListVM: shoppingListVM) {
+                    
+                    // Only fetch recipes after latestScanIngredients is ready
+                    let names = scanSession.latestScanIngredients.map { $0.name }
+                    fetchRecipes(using: names, recipeVM: recipeVM)
+                    
+                    uploadRecipeMessage = "Updated Recipes successfully"
+                }
+                
                 uploadStatusMessage = "Scan uploaded successfully"
-                
-                let names = scanSession.latestScanIngredients.map { $0.name }
-                fetchRecipes(using: names, recipeVM: recipeVM)
-                
-                uploadRecipeMessage = "Updated Recipes successfully"
-                
             }
         case .failure(let error):
             DispatchQueue.main.async {

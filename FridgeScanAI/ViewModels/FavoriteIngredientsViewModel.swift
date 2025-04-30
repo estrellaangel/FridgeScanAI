@@ -1,112 +1,56 @@
-//
-//  FavoriteIngredientsViewModel.swift
-//  FridgeScanAI
-//
-//  Created by Sabrina Farias on 4/25.
-//
-
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
-import Combine
 
 class FavoriteIngredientsViewModel: ObservableObject {
-    @Published var favoriteIngredients: [String] = []
-
     private let db = Firestore.firestore()
 
     private var userID: String? {
         Auth.auth().currentUser?.uid
     }
 
-    func fetchFavorites(shoppingListVM: ShoppingListViewModel? = nil,
-                        scanSessionVM: ScanSessionViewModel? = nil) {
+    // No need for a local favoriteIngredients array anymore!
+
+    // MARK: - Fetch Favorites and Update ShoppingListViewModel
+    func fetchFavorites(shoppingListVM: ShoppingListViewModel) {
         guard let userID else { return }
 
-        db.collection("users").document(userID).collection("favoriteIngredients").document("main")
-            .getDocument { snapshot, error in
-                if let data = snapshot?.data(),
-                   let ingredients = data["items"] as? [String] {
-                    DispatchQueue.main.async {
-                        self.favoriteIngredients = ingredients
+        let favoriteRef = db.collection("users").document(userID).collection("shoppingList").document("favoriteIngredients")
 
-                        // Syncing with the newest list list
-                        if let shoppingListVM, let scanSessionVM {
-                            shoppingListVM.updateAfterScan(
-                                newInventory: scanSessionVM.latestScanIngredients.map { $0.name },
-                                favoriteIngredients: ingredients
-                            )
-                        }
-                    }
-                } else {
-                    print("Couldn't load favorites: \(error?.localizedDescription ?? "No data")")
+        favoriteRef.getDocument { snapshot, error in
+            if let favoriteData = snapshot?.data(),
+               let favorites = favoriteData["items"] as? [String] {
+                DispatchQueue.main.async {
+                    shoppingListVM.favoriteBasedItems = favorites
                 }
+            } else {
+                print("Couldn't load favorites: \(error?.localizedDescription ?? "No data")")
+            }
         }
     }
 
-
-    func addIngredient(_ name: String, shoppingListVM: ShoppingListViewModel, scanSessionVM: ScanSessionViewModel) {
+    // MARK: - Add a Favorite Ingredient
+    func addIngredient(_ name: String, shoppingListVM: ShoppingListViewModel) {
         guard let userID else { return }
 
         let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty, !favoriteIngredients.contains(trimmed) else { return }
+        guard !trimmed.isEmpty else { return }
 
-        favoriteIngredients.append(trimmed)
+        if !shoppingListVM.favoriteBasedItems.contains(trimmed) {
+            shoppingListVM.favoriteBasedItems.append(trimmed)
 
-        db.collection("users").document(userID).collection("favoriteIngredients").document("main")
-        .setData([
-            "items": favoriteIngredients
-        ], merge: false)
-
-        // updaate shopping lsit
-        shoppingListVM.updateAfterScan(
-            newInventory: scanSessionVM.latestScanIngredients.map { $0.name },
-            favoriteIngredients: self.favoriteIngredients
-        )
-    }
-
-
-    func deleteIngredient(at index: Int, shoppingListVM: ShoppingListViewModel, scanSessionVM: ScanSessionViewModel) {
-        guard let userID else { return }
-
-        favoriteIngredients.remove(at: index)
-
-        db.collection("users").document(userID).collection("favoriteIngredients").document("main")
-        .setData([
-            "items": favoriteIngredients
-        ], merge: false) { error in
-            if let error = error {
-                print("❌ Firestore update failed: \(error)")
-                return
-            }
-
-            print("Firestore updated with: \(self.favoriteIngredients)")
-            self.fetchFavorites(shoppingListVM: shoppingListVM, scanSessionVM: scanSessionVM)
-        }
-    }
-    
-    func fetchFavoritesThenUpdateShoppingList(scanSessionVM: ScanSessionViewModel,
-                                              shoppingListVM: ShoppingListViewModel) {
-        guard let userID else { return }
-
-        db.collection("users").document(userID).collection("favoriteIngredients").document("main")
-            .getDocument { snapshot, error in
-                if let data = snapshot?.data(),
-                   let ingredients = data["items"] as? [String] {
-                    DispatchQueue.main.async {
-                        self.favoriteIngredients = ingredients
-                        print("✅ Refetched favorites: \(ingredients)")
-
-                        // ✅ Now use guaranteed fresh list
-                        shoppingListVM.updateAfterScan(
-                            newInventory: scanSessionVM.latestScanIngredients.map { $0.name },
-                            favoriteIngredients: ingredients
-                        )
-                    }
-                } else {
-                    print("⚠️ Could not re-fetch favorites: \(error?.localizedDescription ?? "No data")")
-                }
+            db.collection("users").document(userID).collection("shoppingList").document("favoriteIngredients")
+                .setData(["items": shoppingListVM.favoriteBasedItems], merge: true)
         }
     }
 
+    // MARK: - Delete a Favorite Ingredient
+    func deleteIngredient(at offsets: IndexSet, shoppingListVM: ShoppingListViewModel) {
+        guard let userID else { return }
+
+        shoppingListVM.favoriteBasedItems.remove(atOffsets: offsets)
+
+        db.collection("users").document(userID).collection("shoppingList").document("favoriteIngredients")
+            .setData(["items": shoppingListVM.favoriteBasedItems], merge: true)
+    }
 }

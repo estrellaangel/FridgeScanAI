@@ -34,11 +34,11 @@ struct Recipe: Identifiable, Decodable {
             case .success(let image):
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fit) // 🛠 specify ContentMode explicitly
+//                    .aspectRatio(contentMode: .fit) // 🛠 specify ContentMode explicitly
             case .failure:
                 Image(systemName: "photo")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+//                    .aspectRatio(contentMode: .fit)
                     .foregroundColor(.gray)
             @unknown default:
                 EmptyView()

@@ -106,7 +106,7 @@ struct ScanUploadService {
 //            return []
 //        }
         
-        return ["orange"]
+        return ["orange", "milk"]
         
     }
     

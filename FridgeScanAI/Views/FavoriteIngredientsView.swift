@@ -1,10 +1,3 @@
-//
-//  FavoriteIngredientsView.swift
-//  FridgeScanAI
-//
-//  Created by Sabrina Farias on 4/21/25.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -14,12 +7,11 @@ struct FavoriteIngredientsView: View {
     @EnvironmentObject var scanSession: ScanSessionViewModel
     @EnvironmentObject var shoppingListVM: ShoppingListViewModel
 
-
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(viewModel.favoriteIngredients, id: \.self) { item in
+                    ForEach(shoppingListVM.favoriteBasedItems, id: \.self) { item in
                         Text(item)
                     }
                     .onDelete(perform: delete)
@@ -28,9 +20,11 @@ struct FavoriteIngredientsView: View {
                 HStack {
                     TextField("Add new favorite", text: $newIngredient)
                         .textFieldStyle(.roundedBorder)
+                    
                     Button("Add") {
-                        guard !newIngredient.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-                        viewModel.addIngredient(newIngredient, shoppingListVM: shoppingListVM, scanSessionVM: scanSession)
+                        let trimmed = newIngredient.trimmingCharacters(in: .whitespacesAndNewlines)
+                        guard !trimmed.isEmpty else { return }
+                        viewModel.addIngredient(trimmed, shoppingListVM: shoppingListVM)
                         newIngredient = ""
                     }
                     .buttonStyle(.borderedProminent)
@@ -39,23 +33,12 @@ struct FavoriteIngredientsView: View {
             }
             .navigationTitle("Favorite Ingredients")
             .onAppear {
-                viewModel.fetchFavorites(
-                    shoppingListVM: shoppingListVM,
-                    scanSessionVM: scanSession
-                )
+                viewModel.fetchFavorites(shoppingListVM: shoppingListVM)
             }
         }
     }
 
     private func delete(at offsets: IndexSet) {
-        for index in offsets {
-            viewModel.deleteIngredient(at: index, shoppingListVM: shoppingListVM, scanSessionVM: scanSession)
-        }
+        viewModel.deleteIngredient(at: offsets, shoppingListVM: shoppingListVM)
     }
-}
-
-
-#Preview {
-    FavoriteIngredientsView()
-        .environmentObject(ScanSessionViewModel())
 }
