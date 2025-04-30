@@ -55,55 +55,53 @@ struct SpecificRecipeView: View {
         return scanned + unscanned
     }
 
+    private func statusLabel(_ text: String, color: Color) -> some View {
+        Text(text)
+            .font(.caption)
+            .bold()
+            .padding(.vertical, 6)
+            .padding(.horizontal, 12)
+            .foregroundColor(color)
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+    }
 
 
     private func ingredientRow(_ ingredient: DecodableIngredient) -> some View {
-        @State var addedToList = false
-
         let isScanned = scanSession.latestScanIngredients.contains {
             $0.name.lowercased() == ingredient.name.lowercased()
         }
-
         let isInShoppingList = shoppingListVM.manualItems.contains {
             looselyMatches($0, ingredient.name)
         } || shoppingListVM.favoriteBasedItems.contains {
             !shoppingListVM.isChecked($0) && looselyMatches($0, ingredient.name)
         }
 
-        let hasBeenAdded = addedToList || isInShoppingList
-
         return HStack {
             Text("\(formattedAmount(ingredient.amount))\(ingredient.unit.map { " \($0)" } ?? "") \(ingredient.name)")
-                .strikethrough(isScanned || hasBeenAdded)
-                .foregroundColor((isScanned || hasBeenAdded) ? .secondary : .primary)
-
-            Spacer()
+                .strikethrough((isScanned || isInShoppingList))
+                .foregroundColor((isScanned || isInShoppingList) ? .secondary : .primary)
+                .frame(maxWidth: .infinity, alignment: .leading)  // Ensures label stays aligned and doesn't get squeezed
 
             if isScanned {
-                Text("SCANNED")
-                    .font(.caption)
-                    .foregroundColor(.blue)
-
-            } else if hasBeenAdded {
-                Text("IN SHOPPING LIST")
-                    .font(.caption)
-                    .foregroundColor(.orange)
-
+                statusLabel("SCANNED", color: .blue)
+            } else if isInShoppingList {
+                statusLabel("IN LIST", color: .orange)
             } else {
                 Button(action: {
                     shoppingListVM.addManualItem(ingredient.name)
-                    addedToList = true
                 }) {
-                    Label("", systemImage: "cart.badge.plus")
+                    Text("ADD")
                         .font(.caption)
-                        .padding(6)
-                        .background(Color.green.opacity(0.8))
+                        .padding(.vertical, 6)
+                        .padding(.horizontal, 12)
+                        .background(Color.green.opacity(0.85))
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 6))
                 }
             }
         }
     }
+
 
 
     private func recipeSummaryDisplay() -> some View {

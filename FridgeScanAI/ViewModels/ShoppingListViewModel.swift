@@ -134,6 +134,17 @@ class ShoppingListViewModel: ObservableObject {
 
         manualRef.setData(["items": manualItems], merge: true)
     }
+    
+    func deleteManualItem(_ item: String) {
+        guard let userID else { return }
+        manualItems.removeAll { $0 == item }
+
+        db.collection("users").document(userID)
+            .collection("shoppingList")
+            .document("manualIngredients")
+            .setData(["items": manualItems], merge: true)
+    }
+
 
 
     // MARK: check if a favorite is checked

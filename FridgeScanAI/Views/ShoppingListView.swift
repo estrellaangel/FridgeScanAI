@@ -19,7 +19,7 @@ struct ShoppingListView: View {
                     // Show ALL manual items
                     ForEach(viewModel.manualItems, id: \.self) { item in
                         shoppingItemRow(item: item)
-                    }
+                    }.onDelete(perform: deleteManualItem)
                     
                     
                 }
@@ -59,4 +59,12 @@ struct ShoppingListView: View {
                 .foregroundColor(viewModel.isChecked(item) ? .secondary : .primary)
         }
     }
+    
+    private func deleteManualItem(at offsets: IndexSet) {
+        for index in offsets {
+            let item = viewModel.manualItems[index]
+            viewModel.deleteManualItem(item)
+        }
+    }
+
 }
