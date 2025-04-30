@@ -11,7 +11,7 @@
 		1D161E8D2DB4195400B70311 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8C2DB4195400B70311 /* FirebaseAuth */; };
 		1D161E8F2DB4195400B70311 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8E2DB4195400B70311 /* FirebaseCore */; };
 		1D161E912DB4195400B70311 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E902DB4195400B70311 /* FirebaseFirestore */; };
-		1D161E932DB4195400B70311 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E922DB4195400B70311 /* FirebaseStorage */; };
+		A3BEC96E2DBED29100E4B31C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A3BEC96D2DBED29100E4B31C /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,16 +24,28 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				Model/fridge_scan_ai.mlpackage,
 			);
 			target = 1D0448802DA4889A005B9F92 /* FridgeScanAI */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		A378BA4E2DBC507400839A92 /* Exceptions for "FridgeScanAI" folder in "Copy Bundle Resources" phase from "FridgeScanAI" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 1D04487F2DA4889A005B9F92 /* Resources */;
+			membershipExceptions = (
+				Model/fridge_scan_ai.mlpackage,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1D0448832DA4889A005B9F92 /* FridgeScanAI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				1D8172562DA6F32D00E8360B /* Exceptions for "FridgeScanAI" folder in "FridgeScanAI" target */,
+				A378BA4E2DBC507400839A92 /* Exceptions for "FridgeScanAI" folder in "Copy Bundle Resources" phase from "FridgeScanAI" target */,
 			);
 			path = FridgeScanAI;
 			sourceTree = "<group>";
@@ -45,8 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D161E932DB4195400B70311 /* FirebaseStorage in Frameworks */,
 				1D161E912DB4195400B70311 /* FirebaseFirestore in Frameworks */,
+				A3BEC96E2DBED29100E4B31C /* FirebaseStorage in Frameworks */,
 				1D161E8F2DB4195400B70311 /* FirebaseCore in Frameworks */,
 				1D161E8D2DB4195400B70311 /* FirebaseAuth in Frameworks */,
 			);
@@ -61,6 +73,7 @@
 				1D0448832DA4889A005B9F92 /* FridgeScanAI */,
 				1D0448822DA4889A005B9F92 /* Products */,
 				1D161E892DB417B400B70311 /* GoogleService-Info.plist */,
+				A3BEC96A2DBEB9A700E4B31C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +83,13 @@
 				1D0448812DA4889A005B9F92 /* FridgeScanAI.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A3BEC96A2DBEB9A700E4B31C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +115,7 @@
 				1D161E8C2DB4195400B70311 /* FirebaseAuth */,
 				1D161E8E2DB4195400B70311 /* FirebaseCore */,
 				1D161E902DB4195400B70311 /* FirebaseFirestore */,
-				1D161E922DB4195400B70311 /* FirebaseStorage */,
+				A3BEC96D2DBED29100E4B31C /* FirebaseStorage */,
 			);
 			productName = FridgeScanAI;
 			productReference = 1D0448812DA4889A005B9F92 /* FridgeScanAI.app */;
@@ -109,7 +129,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					1D0448802DA4889A005B9F92 = {
 						CreatedOnToolsVersion = 16.2;
@@ -194,7 +214,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LHW4763J45;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -258,7 +280,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LHW4763J45;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -289,8 +313,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FridgeScanAI/Preview Content\"";
-				DEVELOPMENT_TEAM = LHW4763J45;
+				DEVELOPMENT_TEAM = U6S8QL9FP6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -363,8 +388,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FridgeScanAI/Preview Content\"";
-				DEVELOPMENT_TEAM = LHW4763J45;
+				DEVELOPMENT_TEAM = U6S8QL9FP6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -478,7 +504,7 @@
 			package = 1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		1D161E922DB4195400B70311 /* FirebaseStorage */ = {
+		A3BEC96D2DBED29100E4B31C /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1D161E8B2DB4195400B70311 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
