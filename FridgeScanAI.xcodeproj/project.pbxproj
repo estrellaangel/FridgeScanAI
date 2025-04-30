@@ -12,11 +12,13 @@
 		1D161E8F2DB4195400B70311 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8E2DB4195400B70311 /* FirebaseCore */; };
 		1D161E912DB4195400B70311 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E902DB4195400B70311 /* FirebaseFirestore */; };
 		1D161E932DB4195400B70311 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E922DB4195400B70311 /* FirebaseStorage */; };
+		1DCFB83F2DC201AA00FC3B17 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFB83E2DC2019F00FC3B17 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D0448812DA4889A005B9F92 /* FridgeScanAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeScanAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D161E892DB417B400B70311 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DCFB83E2DC2019F00FC3B17 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -58,6 +60,7 @@
 		1D0448782DA48899005B9F92 = {
 			isa = PBXGroup;
 			children = (
+				1DCFB83E2DC2019F00FC3B17 /* .gitignore */,
 				1D0448832DA4889A005B9F92 /* FridgeScanAI */,
 				1D0448822DA4889A005B9F92 /* Products */,
 				1D161E892DB417B400B70311 /* GoogleService-Info.plist */,
@@ -143,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DCFB83F2DC201AA00FC3B17 /* .gitignore in Resources */,
 				1D161E8A2DB417BA00B70311 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
