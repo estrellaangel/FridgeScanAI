@@ -13,6 +13,7 @@ struct CurrentFridgeView: View {
     
     //Get all ingredients
     @EnvironmentObject var scanSession: ScanSessionViewModel
+    @EnvironmentObject var recipeVM: RecipeViewModel
     
     var body: some View {
         
@@ -43,16 +44,29 @@ struct CurrentFridgeView: View {
                 
                 //CURRENT RECIPIES
                 
-                    Text("Current Recipes")
-                        .bold()
-                    
-                    Text("These are the current recipes")
-                    
-                    List {
-                        // TODO: Add in the list of current recipes
-                    }
+//                    Text("Current Recipes")
+//                        .bold()
+//                    
+//                    if recipeVM.currentRecipes.isEmpty {
+//                        Text("No ingredients detected yet.")
+//                            .foregroundColor(.secondary)
+//                    } else {
+//                        
+//                        ScrollView(.horizontal, showsIndicators: false) {
+//                            HStack(spacing: 16) {
+//                                ForEach(recipeVM.currentRecipes) { recipe in
+//                                    RecipieDetailsView(recipe: recipe)
+//                                        .frame(width: 140)
+//                                }
+//                            }
+//                            .padding(.horizontal)
+//                        }
+//                        .frame(height: 200)
+//                    }
+                Spacer()
+                Spacer()
                 
-                Button("Go to Shopping Cart") {
+                Button("Go to Shopping List") {
                     selectedTab = .cart
                 }
                 .buttonStyle(.borderedProminent)
@@ -66,8 +80,4 @@ struct CurrentFridgeView: View {
 
     }
     
-}
-
-#Preview {
-    CurrentFridgeView(selectedTab: .constant(.fridge))
 }

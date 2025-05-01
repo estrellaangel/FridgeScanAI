@@ -1,29 +1,70 @@
-//
-//  ShoppingListView.swift
-//  FridgeScanAI
-//
-//  Created by Estrella Angel on 4/7/25.
-//
-
 import SwiftUI
 
 struct ShoppingListView: View {
+    @EnvironmentObject var scanSession: ScanSessionViewModel
+    @StateObject private var viewModel = ShoppingListViewModel()
+    @State private var newItem = ""
+
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 20) {
-                
-                Text("Items missing from fridge")
+            VStack {
                 List {
-                    // TODO: Add in the list of current recipes
+                    
+                    // Show ONLY unchecked favorite items
+                    ForEach(viewModel.favoriteBasedItems.filter { !viewModel.isChecked($0) }, id: \.self) { item in
+                        shoppingItemRow(item: item)
+                    }
+                    
+                    
+                    // Show ALL manual items
+                    ForEach(viewModel.manualItems, id: \.self) { item in
+                        shoppingItemRow(item: item)
+                    }.onDelete(perform: deleteManualItem)
+                    
+                    
                 }
                 
+                HStack {
+                    TextField("Add item", text: $newItem)
+                        .textFieldStyle(.roundedBorder)
+
+                    Button("Add") {
+                        let trimmed = newItem.trimmingCharacters(in: .whitespacesAndNewlines)
+                        guard !trimmed.isEmpty else { return }
+                        viewModel.addManualItem(trimmed)
+                        newItem = ""
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding()
             }
-            .padding()
             .navigationTitle("Shopping List")
+            .onAppear {
+                viewModel.fetchShoppingList(scanSessionVM: scanSession)
+            }
         }
     }
-}
 
-#Preview {
-    ShoppingListView()
+    private func shoppingItemRow(item: String) -> some View {
+        HStack {
+            Button(action: {
+                viewModel.toggleChecked(for: item)
+            }) {
+                Image(systemName: viewModel.isChecked(item) ? "checkmark.square" : "square")
+                    .foregroundColor(.blue)
+            }
+
+            Text(item)
+                .strikethrough(viewModel.isChecked(item))
+                .foregroundColor(viewModel.isChecked(item) ? .secondary : .primary)
+        }
+    }
+    
+    private func deleteManualItem(at offsets: IndexSet) {
+        for index in offsets {
+            let item = viewModel.manualItems[index]
+            viewModel.deleteManualItem(item)
+        }
+    }
+
 }

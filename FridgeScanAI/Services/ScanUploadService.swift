@@ -19,6 +19,7 @@ enum UploadError: Error {
 }
 
 struct ScanUploadService {
+        
     static func upload(videoURL: URL, completion: @escaping (Result<DocumentSnapshot, Error>) -> Void) {
         guard FileManager.default.fileExists(atPath: videoURL.path) else {
             completion(.failure(UploadError.fileMissing))
@@ -51,7 +52,8 @@ struct ScanUploadService {
                 }
 
                 let db = Firestore.firestore()
-                let docRef = db.collection("scans").document()
+                let docRef = db.collection("users").document(userID).collection("scans").document()
+
 
                 let scanData: [String: Any] = [
                     "userID": userID,
@@ -104,7 +106,7 @@ struct ScanUploadService {
 //            return []
 //        }
         
-        return ["apple", "orange"]
+        return ["orange", "milk"]
         
     }
     

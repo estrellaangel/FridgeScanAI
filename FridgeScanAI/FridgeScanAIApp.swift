@@ -12,7 +12,14 @@ import FirebaseAuth
 
 @main
 struct FridgeScanAIApp: App {
-    @StateObject private var scanSession = ScanSessionViewModel() // ✅ ADD THIS
+    @StateObject private var scanSession = ScanSessionViewModel()
+    
+    //ADDED BY SABRINA FOR SHOPPING LIST & FAV INGREDIENTS
+    @StateObject private var favoriteVM = FavoriteIngredientsViewModel()
+    @StateObject private var shoppingListVM = ShoppingListViewModel()
+    
+    //RECIPES
+    @StateObject private var recipeVM = RecipeViewModel()
     
     init() {
         FirebaseApp.configure()
@@ -31,6 +38,9 @@ struct FridgeScanAIApp: App {
             HomeView()
                 .modelContainer(for: [FridgeContents.self, Ingredient.self])
                 .environmentObject(scanSession)
+                .environmentObject(favoriteVM)  // ADDED BY SABRINA
+                .environmentObject(shoppingListVM)  // ADDED BY SABRINA
+                .environmentObject(recipeVM)
         }
     }
 }

@@ -92,6 +92,10 @@ class ScanViewController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
 
     func startRecording() {
+        guard captureSession.isRunning else {
+            print("Capture session not running yet. Cannot start recording.")
+            return
+        }
         if !movieOutput.isRecording {
 
             //then add new video

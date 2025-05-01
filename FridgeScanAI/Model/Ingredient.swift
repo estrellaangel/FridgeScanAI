@@ -22,12 +22,10 @@ class Ingredient: Identifiable {
     var name: String = ""
     
     // amount eventually added in
-    var amount: Int = 1
+    var amount: String = ""
     
     // url of photo
     var urlOfPhoto: String = ""
-    
-    
     
     //initializer - this is how we create an instance of the ingredient
     init(name: String, uid: String, urlOfPhoto: String){
