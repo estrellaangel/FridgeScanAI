@@ -1,3 +1,4 @@
 # .gitignore
 *.xcuserstate
 GoogleService-Info.plist
+.DS_Store
