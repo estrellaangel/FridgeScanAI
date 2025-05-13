@@ -81,7 +81,3 @@ struct CurrentFridgeView: View {
     }
     
 }
-
-#Preview {
-    CurrentFridgeView(selectedTab: .constant(.fridge))
-}

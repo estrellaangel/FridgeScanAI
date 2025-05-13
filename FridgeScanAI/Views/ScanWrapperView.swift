@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import AVFoundation
 
-struct ScanViewWrapper: View {
+struct ScanWrapperView: View {
     @Binding var isRecording: Bool
     @Binding var videoURL: URL?
     @Binding var didFinishRecording: Bool
-    
-    //ANONYMOUS USER USED FOR STORING SCANS + HAVING HISTORY SCANS
+
+    // ANONYMOUS USER USED FOR STORING SCANS + HAVING HISTORY SCANS
+
     @Binding var userID: String
-    
+
+    @State private var detections: [DetectionResult] = []
+    @State private var showTestResults = false
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -39,9 +44,7 @@ struct ScanViewWrapper: View {
                     HStack(spacing: 20) {
                         Button(action: {
                             if !isRecording {
-                                // Starting a new recording
                                 videoURL = nil
-
                             }
                             isRecording.toggle()
                         }) {
@@ -55,13 +58,22 @@ struct ScanViewWrapper: View {
                     .padding(.bottom, 40)
                 }
             }
-            // Modern navigationDestination modifier
-            .navigationDestination(isPresented: $didFinishRecording) {
-                ScanResultView(videoURL: videoURL) {
-                    // Reset state when leaving result screen
-                    isRecording = false
-                    didFinishRecording = true
+            .onChange(of: didFinishRecording) { finished in
+                if finished, let videoURL = videoURL {
+                    analyzeRecordedVideo(url: videoURL)
                 }
+            }
+            .navigationDestination(isPresented: $showTestResults) {
+                DetectedItemsView(detections: detections)
+            }
+        }
+    }
+
+    private func analyzeRecordedVideo(url: URL) {
+        FridgeScanModelService.shared.predictFromVideo(url: url) { results in
+            DispatchQueue.main.async {
+                detections = results
+                showTestResults = true
             }
         }
     }

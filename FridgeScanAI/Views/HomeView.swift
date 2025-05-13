@@ -42,7 +42,7 @@ struct HomeView: View {
                 }
                 .tag(Tab.recipes)
 
-            ScanViewWrapper(
+            ScanWrapperView(
                 isRecording: $isRecording,
                 videoURL: $videoURL,
                 didFinishRecording: $didFinishRecording,

@@ -3,7 +3,6 @@
 //  FridgeScanAI
 //
 
-
 import SwiftUI
 import FirebaseAuth
 import FirebaseStorage
