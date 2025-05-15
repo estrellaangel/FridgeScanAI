@@ -1,3 +1,11 @@
+//
+//  FavoriteIngredientsView.swift
+//  FridgeScanAI
+//
+//  Created by Estrella Angel on 4/17/25.
+//
+
+
 import SwiftUI
 import SwiftData
 

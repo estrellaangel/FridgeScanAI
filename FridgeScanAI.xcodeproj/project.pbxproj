@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D161E8A2DB417BA00B70311 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D161E892DB417B400B70311 /* GoogleService-Info.plist */; };
-		1D161E8D2DB4195400B70311 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8C2DB4195400B70311 /* FirebaseAuth */; };
-		1D161E8F2DB4195400B70311 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8E2DB4195400B70311 /* FirebaseCore */; };
-		1D161E912DB4195400B70311 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E902DB4195400B70311 /* FirebaseFirestore */; };
-		1D161E932DB4195400B70311 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E922DB4195400B70311 /* FirebaseStorage */; };
 		1DCFB83F2DC201AA00FC3B17 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1DCFB83E2DC2019F00FC3B17 /* .gitignore */; };
+		A3867B122DCDEC1C00614DB5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8C2DB4195400B70311 /* FirebaseAuth */; };
+		A3867B132DCDEC1C00614DB5 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E8E2DB4195400B70311 /* FirebaseCore */; };
+		A3867B142DCDEC1C00614DB5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E902DB4195400B70311 /* FirebaseFirestore */; };
+		A3867B152DCDEC1C00614DB5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D161E922DB4195400B70311 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D0448812DA4889A005B9F92 /* FridgeScanAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeScanAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D161E892DB417B400B70311 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DCFB83E2DC2019F00FC3B17 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -25,7 +23,7 @@
 		1D8172562DA6F32D00E8360B /* Exceptions for "FridgeScanAI" folder in "FridgeScanAI" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Model/FridgeScanAI.mlproj,
 			);
 			target = 1D0448802DA4889A005B9F92 /* FridgeScanAI */;
 		};
@@ -47,10 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D161E932DB4195400B70311 /* FirebaseStorage in Frameworks */,
-				1D161E912DB4195400B70311 /* FirebaseFirestore in Frameworks */,
-				1D161E8F2DB4195400B70311 /* FirebaseCore in Frameworks */,
-				1D161E8D2DB4195400B70311 /* FirebaseAuth in Frameworks */,
+				A3867B152DCDEC1C00614DB5 /* FirebaseStorage in Frameworks */,
+				A3867B142DCDEC1C00614DB5 /* FirebaseFirestore in Frameworks */,
+				A3867B132DCDEC1C00614DB5 /* FirebaseCore in Frameworks */,
+				A3867B122DCDEC1C00614DB5 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +61,7 @@
 				1DCFB83E2DC2019F00FC3B17 /* .gitignore */,
 				1D0448832DA4889A005B9F92 /* FridgeScanAI */,
 				1D0448822DA4889A005B9F92 /* Products */,
-				1D161E892DB417B400B70311 /* GoogleService-Info.plist */,
+				A3F888582DCDEBC100C127B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +71,13 @@
 				1D0448812DA4889A005B9F92 /* FridgeScanAI.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A3F888582DCDEBC100C127B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DCFB83F2DC201AA00FC3B17 /* .gitignore in Resources */,
-				1D161E8A2DB417BA00B70311 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/GoogleService-Info.plist";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -274,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/GoogleService-Info.plist";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -294,11 +298,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FridgeScanAI/Preview Content\"";
-				DEVELOPMENT_TEAM = LHW4763J45;
+				DEVELOPMENT_TEAM = U6S8QL9FP6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/GoogleService-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -348,7 +352,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = capstone.FridgeScanAI.final;
+				PRODUCT_BUNDLE_IDENTIFIER = capstone.FridgeScanAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -368,11 +372,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FridgeScanAI/Preview Content\"";
-				DEVELOPMENT_TEAM = LHW4763J45;
+				DEVELOPMENT_TEAM = U6S8QL9FP6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FridgeScanAI/GoogleService-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -422,7 +426,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = capstone.FridgeScanAI.final;
+				PRODUCT_BUNDLE_IDENTIFIER = capstone.FridgeScanAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

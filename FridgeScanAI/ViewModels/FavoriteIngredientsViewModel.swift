@@ -1,3 +1,10 @@
+//
+//  FavoriteIngredientsViewModel.swift
+//  FridgeScanAI
+//
+//  Created by Estrella Angel on 4/17/25.
+//
+
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore

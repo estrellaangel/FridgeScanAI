@@ -46,7 +46,9 @@ struct HomeView: View {
                 isRecording: $isRecording,
                 videoURL: $videoURL,
                 didFinishRecording: $didFinishRecording,
-                userID: $userID)
+                userID: $userID,
+                selectedTab: $selectedTab
+            )
                 .tabItem {
                     Label("", systemImage: "camera")
                 }

@@ -41,28 +41,6 @@ struct CurrentFridgeView: View {
                         .frame(height: 200)
                     }
                     
-                
-                //CURRENT RECIPIES
-                
-//                    Text("Current Recipes")
-//                        .bold()
-//                    
-//                    if recipeVM.currentRecipes.isEmpty {
-//                        Text("No ingredients detected yet.")
-//                            .foregroundColor(.secondary)
-//                    } else {
-//                        
-//                        ScrollView(.horizontal, showsIndicators: false) {
-//                            HStack(spacing: 16) {
-//                                ForEach(recipeVM.currentRecipes) { recipe in
-//                                    RecipieDetailsView(recipe: recipe)
-//                                        .frame(width: 140)
-//                                }
-//                            }
-//                            .padding(.horizontal)
-//                        }
-//                        .frame(height: 200)
-//                    }
                 Spacer()
                 Spacer()
                 

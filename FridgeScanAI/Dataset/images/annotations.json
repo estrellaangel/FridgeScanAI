@@ -1,0 +1,1220 @@
+[
+    {
+        "image": "apple_20250215_23_28_04_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 991.5,
+                    "y": 450.5,
+                    "width": 505,
+                    "height": 507
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_28_08_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 657.0,
+                    "y": 376.0,
+                    "width": 424,
+                    "height": 432
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_28_18_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1034.0,
+                    "y": 463.5,
+                    "width": 400,
+                    "height": 397
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_28_23_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1199.0,
+                    "y": 468.5,
+                    "width": 384,
+                    "height": 357
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_28_28_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 998.0,
+                    "y": 363.0,
+                    "width": 260,
+                    "height": 224
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_28_32_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1107.0,
+                    "y": 367.5,
+                    "width": 260,
+                    "height": 317
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_28_41_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 776.5,
+                    "y": 407.0,
+                    "width": 279,
+                    "height": 242
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_28_57_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 784.0,
+                    "y": 710.0,
+                    "width": 306,
+                    "height": 286
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_29_23_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 932.0,
+                    "y": 557.5,
+                    "width": 244,
+                    "height": 273
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250215_23_29_38_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1341.0,
+                    "y": 640.5,
+                    "width": 256,
+                    "height": 233
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_58_38_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1033.0,
+                    "y": 770.0,
+                    "width": 292,
+                    "height": 282
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_58_49_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1303.5,
+                    "y": 569.0,
+                    "width": 341,
+                    "height": 340
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_58_51_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 897.5,
+                    "y": 532.5,
+                    "width": 391,
+                    "height": 367
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_58_59_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 561.0,
+                    "y": 570.5,
+                    "width": 450,
+                    "height": 361
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_59_15_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 879.0,
+                    "y": 618.0,
+                    "width": 478,
+                    "height": 370
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_59_31_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 659.0,
+                    "y": 459.5,
+                    "width": 160,
+                    "height": 175
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_59_43_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1168.0,
+                    "y": 441.5,
+                    "width": 190,
+                    "height": 183
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_14_59_53_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1338.0,
+                    "y": 443.0,
+                    "width": 188,
+                    "height": 144
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_15_00_39_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 750.0,
+                    "y": 405.5,
+                    "width": 182,
+                    "height": 143
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_15_27_42_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1290.0,
+                    "y": 583.5,
+                    "width": 444,
+                    "height": 423
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_15_27_53_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 631.5,
+                    "y": 595.0,
+                    "width": 477,
+                    "height": 402
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_15_27_58_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1419.5,
+                    "y": 583.0,
+                    "width": 465,
+                    "height": 498
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_15_28_15_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 1198.5,
+                    "y": 502.0,
+                    "width": 471,
+                    "height": 410
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_15_28_21_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 664.0,
+                    "y": 515.0,
+                    "width": 514,
+                    "height": 422
+                }
+            }
+        ]
+    },
+    {
+        "image": "apple_20250326_15_28_24_Pro.jpg",
+        "annotations": [
+            {
+                "label": "apple",
+                "coordinates": {
+                    "x": 982.5,
+                    "y": 670.0,
+                    "width": 553,
+                    "height": 412
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_31_56_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 811.5,
+                    "y": 540.5,
+                    "width": 497,
+                    "height": 1037
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_32_06_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1089.5,
+                    "y": 563.0,
+                    "width": 405,
+                    "height": 908
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_32_11_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1271.0,
+                    "y": 571.5,
+                    "width": 366,
+                    "height": 795
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_32_36_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 493.5,
+                    "y": 555.5,
+                    "width": 509,
+                    "height": 1019
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_33_05_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1502.5,
+                    "y": 560.0,
+                    "width": 411,
+                    "height": 908
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_33_12_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1332.0,
+                    "y": 516.5,
+                    "width": 270,
+                    "height": 629
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_33_25_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 956.0,
+                    "y": 486.0,
+                    "width": 398,
+                    "height": 728
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_33_30_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 765.5,
+                    "y": 549.5,
+                    "width": 353,
+                    "height": 605
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_33_48_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 628.0,
+                    "y": 594.0,
+                    "width": 310,
+                    "height": 650
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250215_23_34_02_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1483.0,
+                    "y": 553.5,
+                    "width": 218,
+                    "height": 455
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_12_51_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 799.5,
+                    "y": 543.5,
+                    "width": 461,
+                    "height": 983
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_12_57_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 413.5,
+                    "y": 602.5,
+                    "width": 413,
+                    "height": 883
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_13_17_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 630.0,
+                    "y": 595.0,
+                    "width": 370,
+                    "height": 832
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_13_57_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 430.5,
+                    "y": 569.5,
+                    "width": 397,
+                    "height": 851
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_14_09_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 270.5,
+                    "y": 583.5,
+                    "width": 375,
+                    "height": 875
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_14_26_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1354.0,
+                    "y": 583.5,
+                    "width": 290,
+                    "height": 523
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_14_38_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1049.5,
+                    "y": 480.5,
+                    "width": 421,
+                    "height": 693
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_14_47_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 614.5,
+                    "y": 487.5,
+                    "width": 371,
+                    "height": 637
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_15_34_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 522.0,
+                    "y": 530.0,
+                    "width": 296,
+                    "height": 580
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_15_40_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 402.5,
+                    "y": 542.0,
+                    "width": 245,
+                    "height": 546
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_15_43_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 629.0,
+                    "y": 538.0,
+                    "width": 312,
+                    "height": 686
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_16_26_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 573.5,
+                    "y": 530.5,
+                    "width": 477,
+                    "height": 981
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_16_30_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 578.0,
+                    "y": 528.0,
+                    "width": 362,
+                    "height": 616
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_16_38_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1323.5,
+                    "y": 514.5,
+                    "width": 289,
+                    "height": 519
+                }
+            }
+        ]
+    },
+    {
+        "image": "oatmilk_20250327_01_17_18_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 516.5,
+                    "y": 460.5,
+                    "width": 273,
+                    "height": 581
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_35_13_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 825.5,
+                    "y": 727.5,
+                    "width": 345,
+                    "height": 333
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_35_25_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1082.0,
+                    "y": 678.0,
+                    "width": 420,
+                    "height": 408
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_35_30_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 773.0,
+                    "y": 627.5,
+                    "width": 470,
+                    "height": 397
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_35_35_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1090.0,
+                    "y": 498.5,
+                    "width": 486,
+                    "height": 385
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_35_42_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 535.5,
+                    "y": 519.0,
+                    "width": 445,
+                    "height": 524
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_35_52_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1086.0,
+                    "y": 551.5,
+                    "width": 198,
+                    "height": 151
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_35_53_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 684.0,
+                    "y": 509.5,
+                    "width": 212,
+                    "height": 171
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_36_02_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 575.0,
+                    "y": 505.5,
+                    "width": 212,
+                    "height": 203
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_36_05_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1306.0,
+                    "y": 531.0,
+                    "width": 204,
+                    "height": 170
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250215_23_36_12_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1566.0,
+                    "y": 807.5,
+                    "width": 134,
+                    "height": 133
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_31_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 970.0,
+                    "y": 569.5,
+                    "width": 464,
+                    "height": 403
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_34_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1296.0,
+                    "y": 571.0,
+                    "width": 430,
+                    "height": 422
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_41_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 535.0,
+                    "y": 563.5,
+                    "width": 376,
+                    "height": 381
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_48_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 576.0,
+                    "y": 565.0,
+                    "width": 434,
+                    "height": 340
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_50_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 977.0,
+                    "y": 577.0,
+                    "width": 444,
+                    "height": 374
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_53_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1419.5,
+                    "y": 591.5,
+                    "width": 365,
+                    "height": 339
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_57_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 904.0,
+                    "y": 396.5,
+                    "width": 210,
+                    "height": 191
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_10_59_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1315.5,
+                    "y": 423.5,
+                    "width": 197,
+                    "height": 195
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_11_07_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 741.5,
+                    "y": 423.5,
+                    "width": 213,
+                    "height": 223
+                }
+            }
+        ]
+    },
+    {
+        "image": "orange_20250326_15_11_11_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 852.0,
+                    "y": 685.5,
+                    "width": 200,
+                    "height": 223
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_52_22_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1522.0,
+                    "y": 479.5,
+                    "width": 366,
+                    "height": 755
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_52_27_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1421.0,
+                    "y": 438.5,
+                    "width": 404,
+                    "height": 793
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_52_38_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 344.5,
+                    "y": 510.5,
+                    "width": 379,
+                    "height": 833
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_52_47_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 597.0,
+                    "y": 498.5,
+                    "width": 484,
+                    "height": 937
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_53_29_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 426.0,
+                    "y": 543.5,
+                    "width": 284,
+                    "height": 565
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_53_49_Pro.jpg",
+        "annotations": [
+            {
+                "label": "oatmilk",
+                "coordinates": {
+                    "x": 1522.5,
+                    "y": 564.5,
+                    "width": 285,
+                    "height": 549
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_56_31_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1483.5,
+                    "y": 593.0,
+                    "width": 151,
+                    "height": 164
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_56_35_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1483.5,
+                    "y": 296.5,
+                    "width": 177,
+                    "height": 159
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_56_38_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1215.0,
+                    "y": 288.0,
+                    "width": 204,
+                    "height": 192
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_56_46_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1647.5,
+                    "y": 870.0,
+                    "width": 191,
+                    "height": 200
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_57_13_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 307.0,
+                    "y": 316.5,
+                    "width": 116,
+                    "height": 161
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_57_19_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 618.0,
+                    "y": 331.0,
+                    "width": 142,
+                    "height": 134
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_57_22_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 596.5,
+                    "y": 715.5,
+                    "width": 165,
+                    "height": 171
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_57_33_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 281.0,
+                    "y": 770.0,
+                    "width": 100,
+                    "height": 132
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_57_49_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 230.0,
+                    "y": 738.0,
+                    "width": 106,
+                    "height": 122
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_57_55_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 646.5,
+                    "y": 577.0,
+                    "width": 167,
+                    "height": 174
+                }
+            }
+        ]
+    },
+    {
+        "image": "WIN_20250329_23_58_01_Pro.jpg",
+        "annotations": [
+            {
+                "label": "orange",
+                "coordinates": {
+                    "x": 1285.5,
+                    "y": 888.0,
+                    "width": 163,
+                    "height": 142
+                }
+            }
+        ]
+    }
+]

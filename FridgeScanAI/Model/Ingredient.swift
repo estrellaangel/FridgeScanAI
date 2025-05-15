@@ -32,10 +32,6 @@ class Ingredient: Identifiable {
         self.name = name
         self.uid = uid
         self.urlOfPhoto = urlOfPhoto
-        
-        
-        
-        
     }
     
     var image: some View {
@@ -46,7 +42,7 @@ class Ingredient: Identifiable {
             case .success(let image):
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fit) // 🛠 specify ContentMode explicitly
+                    .aspectRatio(contentMode: .fit) //specify ContentMode explicitly
             case .failure:
                 Image(systemName: "photo")
                     .resizable()
